@@ -1,0 +1,40 @@
+[env]
+# Set NODE_ENV="development" if not already defined.
+# Either "development" or "production" should be used.
+NODE_ENV = { condition = { env_not_set = ["NODE_ENV"] }, value = "development" }
+
+# Build the website.
+[tasks.build]
+clear = true
+command = "pnpm"
+args = ["tsx", "source/build.ts"]
+
+# Remove the build directory.
+[tasks.clean]
+clear = true
+command = "pnpm"
+args = ["trash", "build/"]
+
+# Run all other linting tasks.
+[tasks.lint]
+clear = true
+dependencies = ["lint-js", "lint-scss"]
+
+# Run XO.
+[tasks.lint-js]
+clear = true
+command = "pnpm"
+args = ["xo"]
+
+# Run Stylelint.
+[tasks.lint-scss]
+clear = true
+command = "pnpm"
+args = ["stylelint", "source/**/*.scss"]
+
+# Build and publish the website.
+[tasks.publish]
+clear = true
+dependencies = ["clean", "build"]
+command = "pnpm"
+args = ["netlify", "deploy", "-p", "-d", "build/", "-s", "today.bauke.xyz"]
