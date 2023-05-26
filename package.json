@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "modern-normalize": "^2.0.0",
+    "preact": "^10.15.0"
+  },
+  "devDependencies": {
+    "@bauke/eslint-config": "^0.1.2",
+    "@bauke/prettier-config": "^0.1.2",
+    "@bauke/stylelint-config": "^0.1.2",
+    "@holllo/test": "^0.2.1",
+    "@types/node": "^20.2.3",
+    "cssnano": "^6.0.1",
+    "esbuild": "^0.17.19",
+    "esbuild-copy-static-files": "^0.1.0",
+    "esbuild-sass-plugin": "^2.9.0",
+    "netlify-cli": "^15.1.1",
+    "postcss": "^8.4.23",
+    "sass": "^1.62.1",
+    "stylelint": "^15.6.2",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "trash-cli": "^5.0.0",
+    "tsx": "^3.12.7",
+    "typescript": "^5.0.4",
+    "xo": "^0.54.2"
+  },
+  "prettier": "@bauke/prettier-config",
+  "stylelint": {
+    "extends": "@bauke/stylelint-config"
+  },
+  "xo": {
+    "extends": "@bauke/eslint-config",
+    "prettier": true,
+    "rules": {
+      "@typescript-eslint/consistent-type-definitions": "off",
+      "import/no-extraneous-dependencies": "off",
+      "no-await-in-loop": "off"
+    },
+    "space": true
+  }
+}
