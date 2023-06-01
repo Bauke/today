@@ -1,12 +1,18 @@
+/**
+ * A small wrapper around {@link Date} for convenience and additional
+ * functionality.
+ */
 export class DateWrapper {
+  /** The inner {@link Date}. */
   public date: Date;
 
+  /** Create a new  {@link DateWrapper} from a {@link Date} or string. */
   constructor(date: Date | string) {
     this.date = date instanceof Date ? date : new Date(date);
   }
 
   /**
-   * Adds the specified number of days to the inner date.
+   * Add the specified number of days to the inner date.
    *
    * @param days The amount of days to add, can also be negative to subtract.
    */
@@ -60,9 +66,10 @@ export class DateWrapper {
     // Get the difference between the first week and the current date in days.
     const dayDifference = (date.getTime() - firstWeek.getTime()) / 86_400_000;
 
-    // Adjust the day difference to Thursday and then get the number of weeks.
-    return (
-      1 + Math.round((dayDifference - 3 + ((firstWeek.getDay() + 6) % 7)) / 7)
-    );
+    // Adjust the day difference to Thursday.
+    const adjustedDays = dayDifference - 3 + ((firstWeek.getDay() + 6) % 7);
+
+    // Calculate the number of weeks from the amount of days in the difference.
+    return 1 + Math.round(adjustedDays / 7);
   }
 }
