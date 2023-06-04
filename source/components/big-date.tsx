@@ -1,6 +1,4 @@
-// Third-party imports.
 import {Component} from "preact";
-// First-party imports.
 import {type SharedProps} from "./shared.js";
 
 export class BigDate extends Component<SharedProps> {

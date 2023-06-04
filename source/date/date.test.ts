@@ -1,6 +1,4 @@
-// Third-party imports.
 import {setup} from "@holllo/test";
-// First-party imports.
 import {DateWrapper} from "./date.js";
 
 await setup("DateWrapper", async (group) => {

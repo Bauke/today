@@ -1,12 +1,9 @@
-// Import native Node libraries.
 import path from "node:path";
 import process from "node:process";
 import fsp from "node:fs/promises";
-// Import Esbuild and associated plugins.
 import esbuild from "esbuild";
 import copyPlugin from "esbuild-copy-static-files";
 import {sassPlugin} from "esbuild-sass-plugin";
-// Import PostCSS and associated plugins.
 import cssnano from "cssnano";
 import postcss from "postcss";
 
