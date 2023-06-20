@@ -1,0 +1,97 @@
+blockquote,
+code,
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+ol,
+p,
+pre,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  --base: #24273a;
+  --surface-0: #363a4f;
+  --subtext-0: #a5adcb;
+  --overlay-0: #6e738d;
+  --text: #cad3f5;
+  --spacing-1: 32px;
+
+  background-color: var(--base);
+  color: var(--text);
+  font-size: 2rem;
+}
+
+.preact-root {
+  border: 2px solid var(--overlay-0);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.calendar,
+.big-date,
+.subtitle {
+  margin-left: var(--spacing-1);
+}
+
+.subtitle {
+  margin-top: var(--spacing-1);
+}
+
+.big-date {
+  font-size: 4rem;
+
+  .dash {
+    color: var(--overlay-0);
+  }
+}
+
+.calendar {
+  border: 2px solid var(--text);
+  display: inline-grid;
+  font-family: monospace;
+  grid-template-columns: repeat(8, 1fr);
+  width: fit-content;
+
+  p {
+    padding: 4px;
+  }
+
+  .current-week,
+  .current-week-day {
+    background-color: var(--surface-0);
+  }
+
+  .current-day,
+  .current-week-day-name {
+    background-color: var(--text);
+    color: var(--base);
+  }
+
+  .current-month,
+  .current-week,
+  .current-week-day-name {
+    font-weight: bold;
+  }
+
+  .other-month {
+    color: var(--overlay-0);
+  }
+
+  .week-day-name {
+    border-bottom: 2px solid var(--text);
+  }
+
+  .week-number {
+    border-right: 2px solid var(--text);
+  }
+}
